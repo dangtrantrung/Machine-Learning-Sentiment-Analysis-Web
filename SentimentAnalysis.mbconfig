@@ -1,0 +1,348 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\artminh\\Downloads\\wikipedia-detox-250-line-data.tsv",
+    "Delimiter": "\t",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Sentiment",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "SentimentText",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "LoggedIn",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.8,
+        "RuntimeInSeconds": 0.53,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e5 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "LoggedIn"
+            ],
+            "InputColumnNames": [
+              "LoggedIn"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "SentimentText",
+            "OutputColumnName": "SentimentText"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "LoggedIn",
+              "SentimentText"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Sentiment",
+            "InputColumnName": "Sentiment",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9847249,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.8,
+        "RuntimeInSeconds": 0.297,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "LoggedIn"
+            ],
+            "InputColumnNames": [
+              "LoggedIn"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "SentimentText",
+            "OutputColumnName": "SentimentText"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "LoggedIn",
+              "SentimentText"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Sentiment",
+            "InputColumnName": "Sentiment",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 28,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 72,
+            "FeatureFraction": 0.75507393050395222,
+            "LearningRate": 0.71462412028462707,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.8,
+        "RuntimeInSeconds": 0.398,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "LoggedIn"
+            ],
+            "InputColumnNames": [
+              "LoggedIn"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "SentimentText",
+            "OutputColumnName": "SentimentText"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "LoggedIn",
+              "SentimentText"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Sentiment",
+            "InputColumnName": "Sentiment",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 50,
+            "NumberOfTrees": 109,
+            "MaximumBinCountPerFeature": 61,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.002189476809686845,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.8,
+        "RuntimeInSeconds": 0.441,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "LoggedIn"
+            ],
+            "InputColumnNames": [
+              "LoggedIn"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "SentimentText",
+            "OutputColumnName": "SentimentText"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "LoggedIn",
+              "SentimentText"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Sentiment",
+            "InputColumnName": "Sentiment",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 6,
+            "MinimumExampleCountPerLeaf": 5,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 60,
+            "FeatureFraction": 0.54110987324408788,
+            "LearningRate": 0.010056421898363267,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.73333333333333328,
+        "RuntimeInSeconds": 0.347,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "LoggedIn"
+            ],
+            "InputColumnNames": [
+              "LoggedIn"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "SentimentText",
+            "OutputColumnName": "SentimentText"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "LoggedIn",
+              "SentimentText"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "Sentiment",
+            "InputColumnName": "Sentiment",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 9,
+            "MinimumExampleCountPerLeaf": 17,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 205,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.55220948857197549,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e5": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "Sentiment",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "FeaturizeText",
+      "e2": "Concatenate",
+      "e3": "MapValueToKey",
+      "e4": "FastTreeOva",
+      "e5": "FastForestOva",
+      "e6": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * (e4 + e5) * e6",
+    "MetricName": "MicroAccuracy",
+    "ModelFilePath": "C:\\Users\\artminh\\source\\repos\\SentimentRazor\\SentimentRazor\\SentimentAnalysis.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 0,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 25,
+    "OptimizeMetric": "MicroAccuracy",
+    "LabelColumn": "Sentiment",
+    "AvailableTrainers": [
+      "FASTTREE",
+      "FASTFOREST"
+    ],
+    "Seed": 0
+  }
+}
